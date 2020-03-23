@@ -7,7 +7,7 @@
 int main()
 {
 int Max[10][10], need[10][10], alloc[10][10], avail[10], completed[10], safeSequence[10];
-int p, r, i, j, process, count;
+int p,q, i, j, process, count;
 count = 0;
 
 printf("Enter the no of processes : ");
@@ -17,13 +17,13 @@ for(i = 0; i< p; i++)
 	completed[i] = 0;
 
 printf("\n\nEnter the no of resources : ");
-scanf("%d", &r);
+scanf("%d", &q);
 
 printf("\n\nEnter the Max Matrix for each process : ");
 for(i = 0; i < p; i++)
 {
 	printf("\nFor process %d : ", i + 1);
-	for(j = 0; j < r; j++)
+	for(j = 0; j < q; j++)
 		scanf("%d", &Max[i][j]);
 }
 
@@ -31,27 +31,27 @@ printf("\n\nEnter the allocation for each process : ");
 for(i = 0; i < p; i++)
 {
 	printf("\nFor process %d : ",i + 1);
-	for(j = 0; j < r; j++)
+	for(j = 0; j < q; j++)
 		scanf("%d", &alloc[i][j]);	
 }
 
 printf("\n\nEnter the Available Resources : ");
-for(i = 0; i < r; i++)
+for(i = 0; i < q; i++)
 		scanf("%d", &avail[i]);	
 
 
 	for(i = 0; i < p; i++)
-		for(j = 0; j < r; j++)
+		for(j = 0; j < q; j++)
 			need[i][j] = Max[i][j] - alloc[i][j];
 		do
 {
 	printf("\n Max matrix:\tAllocation matrix:\n");
 	for(i = 0; i < p; i++)
 	{
-		for( j = 0; j < r; j++)
+		for( j = 0; j < q; j++)
 			printf("%d  ", Max[i][j]);
 		printf("\t\t");
-		for( j = 0; j < r; j++)
+		for( j = 0; j < q; j++)
 			printf("%d  ", alloc[i][j]);
 		printf("\n");
 	}
