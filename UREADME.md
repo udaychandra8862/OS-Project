@@ -17,7 +17,7 @@ for(i = 0; i< p; i++)
 	completed[i] = 0;
 
 printf("\n\nEnter the no of resources : ");
-scanf("%d", &r);
+scanf("%d", &q);
 
 printf("\n\nEnter the Max Matrix for each process : ");
 for(i = 0; i < p; i++)
@@ -41,6 +41,6 @@ for(i = 0; i < q; i++)
 
 
 	for(i = 0; i < p; i++)
-		for(j = 0; j < r; j++)
+		for(j = 0; j < q; j++)
 			need[i][j] = Max[i][j] - alloc[i][j];
 		}
