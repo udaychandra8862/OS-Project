@@ -75,3 +75,16 @@ for(i = 0; i < q; i++)
 		if(process != -1)
 			break;
 	}
+if(process != -1)
+	{
+		printf("\nProcess %d runs to completion!", process + 1);
+		safeSequence[count] = process + 1;
+		count++;
+		for(j = 0; j < r; j++)
+		{
+			avail[j] += alloc[process][j];
+			alloc[process][j] = 0;
+			Max[process][j] = 0;
+			completed[process] = 1;
+		}
+	}
